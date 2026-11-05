@@ -1,0 +1,384 @@
+{
+    "name": "Exemplo - Cobertura de Detecção - ATT&CK v20.0",
+    "versions": {
+        "attack": "20",
+        "navigator": "5.1.0",
+        "layer": "4.5"
+    },
+    "domain": "enterprise-attack",
+    "description": "Casos de uso validados contra ATT&CK v20.0 (STIX oficial do MITRE ATT&CK v20.0)",
+    "techniques": [
+        {
+            "techniqueID": "T1003.001",
+            "tactic": "credential-access",
+            "score": 1,
+            "metadata": [
+                {
+                    "name": "Data Source",
+                    "value": "EDR"
+                },
+                {
+                    "name": "Nome da Regra",
+                    "value": "Acesso à memória do processo LSASS"
+                }
+            ],
+            "enabled": true
+        },
+        {
+            "techniqueID": "T1021.001",
+            "tactic": "lateral-movement",
+            "score": 1,
+            "metadata": [
+                {
+                    "name": "Data Source",
+                    "value": "Windows Security Event Log"
+                },
+                {
+                    "name": "Nome da Regra",
+                    "value": "Logon RDP entre estações de trabalho"
+                }
+            ],
+            "enabled": true
+        },
+        {
+            "techniqueID": "T1053.005",
+            "tactic": "persistence",
+            "score": 1,
+            "metadata": [
+                {
+                    "name": "Data Source",
+                    "value": "EDR"
+                },
+                {
+                    "name": "Nome da Regra",
+                    "value": "Criação de tarefa agendada por processo incomum"
+                }
+            ],
+            "enabled": true
+        },
+        {
+            "techniqueID": "T1059.001",
+            "tactic": "execution",
+            "score": 1,
+            "metadata": [
+                {
+                    "name": "Data Source",
+                    "value": "EDR"
+                },
+                {
+                    "name": "Nome da Regra",
+                    "value": "PowerShell executado com comando codificado (Base64)"
+                }
+            ],
+            "enabled": true
+        },
+        {
+            "techniqueID": "T1078.004",
+            "tactic": "initial-access",
+            "score": 1,
+            "metadata": [
+                {
+                    "name": "Data Source",
+                    "value": "Microsoft Entra ID Sign-in Logs"
+                },
+                {
+                    "name": "Nome da Regra",
+                    "value": "Login em conta cloud a partir de país incomum"
+                }
+            ],
+            "enabled": true
+        },
+        {
+            "techniqueID": "T1105",
+            "tactic": "command-and-control",
+            "score": 1,
+            "metadata": [
+                {
+                    "name": "Data Source",
+                    "value": "Proxy web"
+                },
+                {
+                    "name": "Nome da Regra",
+                    "value": "Download de executável de domínio recém-registrado"
+                }
+            ],
+            "enabled": true
+        },
+        {
+            "techniqueID": "T1110.001",
+            "tactic": "credential-access",
+            "score": 1,
+            "metadata": [
+                {
+                    "name": "Data Source",
+                    "value": "Windows Security Event Log"
+                },
+                {
+                    "name": "Nome da Regra",
+                    "value": "Múltiplas falhas de logon seguidas de sucesso"
+                }
+            ],
+            "enabled": true
+        },
+        {
+            "techniqueID": "T1110.003",
+            "tactic": "credential-access",
+            "score": 1,
+            "metadata": [
+                {
+                    "name": "Data Source",
+                    "value": "Microsoft Entra ID Sign-in Logs"
+                },
+                {
+                    "name": "Nome da Regra",
+                    "value": "Tentativas de login em muitas contas a partir do mesmo IP"
+                }
+            ],
+            "enabled": true
+        },
+        {
+            "techniqueID": "T1136.003",
+            "tactic": "persistence",
+            "score": 1,
+            "metadata": [
+                {
+                    "name": "Data Source",
+                    "value": "Microsoft Entra ID Audit Logs"
+                },
+                {
+                    "name": "Nome da Regra",
+                    "value": "Nova conta criada no tenant fora do processo padrão"
+                }
+            ],
+            "enabled": true
+        },
+        {
+            "techniqueID": "T1190",
+            "tactic": "initial-access",
+            "score": 2,
+            "metadata": [
+                {
+                    "name": "Data Source",
+                    "value": "WAF"
+                },
+                {
+                    "name": "Nome da Regra",
+                    "value": "Padrões de injeção de SQL em requisições"
+                },
+                {
+                    "name": "Nome da Regra",
+                    "value": "Tentativa de directory traversal"
+                }
+            ],
+            "enabled": true
+        },
+        {
+            "techniqueID": "T1486",
+            "tactic": "impact",
+            "score": 1,
+            "metadata": [
+                {
+                    "name": "Data Source",
+                    "value": "Servidor de arquivos"
+                },
+                {
+                    "name": "Nome da Regra",
+                    "value": "Alto volume de renomeação de arquivos em curto intervalo"
+                }
+            ],
+            "enabled": true
+        },
+        {
+            "techniqueID": "T1490",
+            "tactic": "impact",
+            "score": 1,
+            "metadata": [
+                {
+                    "name": "Data Source",
+                    "value": "EDR"
+                },
+                {
+                    "name": "Nome da Regra",
+                    "value": "Exclusão de shadow copies (vssadmin / wmic)"
+                }
+            ],
+            "enabled": true
+        },
+        {
+            "techniqueID": "T1566.001",
+            "tactic": "initial-access",
+            "score": 1,
+            "metadata": [
+                {
+                    "name": "Data Source",
+                    "value": "Gateway de e-mail"
+                },
+                {
+                    "name": "Nome da Regra",
+                    "value": "Anexo com macro ou executável entregue a usuário"
+                }
+            ],
+            "enabled": true
+        },
+        {
+            "techniqueID": "T1567.002",
+            "tactic": "exfiltration",
+            "score": 1,
+            "metadata": [
+                {
+                    "name": "Data Source",
+                    "value": "Proxy web"
+                },
+                {
+                    "name": "Nome da Regra",
+                    "value": "Upload volumoso para serviço de armazenamento em nuvem"
+                }
+            ],
+            "enabled": true
+        },
+        {
+            "techniqueID": "T1568.002",
+            "tactic": "command-and-control",
+            "score": 1,
+            "metadata": [
+                {
+                    "name": "Data Source",
+                    "value": "DNS"
+                },
+                {
+                    "name": "Nome da Regra",
+                    "value": "Consultas a domínios com características de DGA"
+                }
+            ],
+            "enabled": true
+        },
+        {
+            "techniqueID": "T1685.005",
+            "tactic": "defense-impairment",
+            "score": 1,
+            "metadata": [
+                {
+                    "name": "Data Source",
+                    "value": "Windows Security Event Log"
+                },
+                {
+                    "name": "Nome da Regra",
+                    "value": "Log de eventos de segurança apagado"
+                }
+            ],
+            "enabled": true
+        },
+        {
+            "techniqueID": "T1686.002",
+            "tactic": "defense-impairment",
+            "score": 1,
+            "metadata": [
+                {
+                    "name": "Data Source",
+                    "value": "Firewall de perímetro"
+                },
+                {
+                    "name": "Nome da Regra",
+                    "value": "Política de firewall alterada fora do horário comercial"
+                }
+            ],
+            "enabled": true
+        },
+        {
+            "techniqueID": "T1003",
+            "tactic": "credential-access",
+            "showSubtechniques": true,
+            "enabled": true
+        },
+        {
+            "techniqueID": "T1021",
+            "tactic": "lateral-movement",
+            "showSubtechniques": true,
+            "enabled": true
+        },
+        {
+            "techniqueID": "T1053",
+            "tactic": "persistence",
+            "showSubtechniques": true,
+            "enabled": true
+        },
+        {
+            "techniqueID": "T1059",
+            "tactic": "execution",
+            "showSubtechniques": true,
+            "enabled": true
+        },
+        {
+            "techniqueID": "T1078",
+            "tactic": "initial-access",
+            "showSubtechniques": true,
+            "enabled": true
+        },
+        {
+            "techniqueID": "T1110",
+            "tactic": "credential-access",
+            "showSubtechniques": true,
+            "enabled": true
+        },
+        {
+            "techniqueID": "T1136",
+            "tactic": "persistence",
+            "showSubtechniques": true,
+            "enabled": true
+        },
+        {
+            "techniqueID": "T1566",
+            "tactic": "initial-access",
+            "showSubtechniques": true,
+            "enabled": true
+        },
+        {
+            "techniqueID": "T1567",
+            "tactic": "exfiltration",
+            "showSubtechniques": true,
+            "enabled": true
+        },
+        {
+            "techniqueID": "T1568",
+            "tactic": "command-and-control",
+            "showSubtechniques": true,
+            "enabled": true
+        },
+        {
+            "techniqueID": "T1685",
+            "tactic": "defense-impairment",
+            "showSubtechniques": true,
+            "enabled": true
+        },
+        {
+            "techniqueID": "T1686",
+            "tactic": "defense-impairment",
+            "showSubtechniques": true,
+            "enabled": true
+        }
+    ],
+    "gradient": {
+        "colors": [
+            "#ffffff",
+            "#ff6666"
+        ],
+        "minValue": 0,
+        "maxValue": 2
+    },
+    "legendItems": [
+        {
+            "label": "Monitorado",
+            "color": "#ff6666"
+        }
+    ],
+    "layout": {
+        "layout": "side",
+        "aggregateFunction": "sum",
+        "showAggregateScores": true,
+        "countUnscored": false
+    },
+    "showTacticRowBackground": true,
+    "tacticRowBackground": "#dddddd",
+    "selectTechniquesAcrossTactics": true,
+    "sorting": 0
+}
