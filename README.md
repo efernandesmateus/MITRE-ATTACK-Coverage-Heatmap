@@ -1,4 +1,4 @@
-# ATT&CK Coverage Heatmap
+# MITRE ATT&CK Coverage Heatmap
 
 🇧🇷 Português | [🇺🇸 English](#english)
 
@@ -21,18 +21,40 @@ A planilha é preenchida com os **nomes** das táticas e técnicas, do jeito que
 
 ## Requisitos
 
-- Python 3.8+
-- `pip install -r requirements.txt`
+- Python 3.8+ (Windows, Linux ou macOS)
+- Dependências: `pandas` e `openpyxl` (instaladas pelo `requirements.txt`)
 
-## Uso rápido
+## Instalação e uso
+
+Recomendado: usar um ambiente virtual (obrigatório em distribuições Linux recentes, que bloqueiam `pip install` fora dele).
+
+**Windows (PowerShell)**
+
+```powershell
+git clone https://github.com/efernandesmateus/MITRE-ATTACK-Coverage-Heatmap.git
+cd MITRE-ATTACK-Coverage-Heatmap
+py -m venv .venv
+.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+python gerar_mitre_json.py --mapa exemplo/casos_de_uso_exemplo.xlsx
+```
+
+Se o PowerShell bloquear o `Activate.ps1`, rode antes: `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`.
+
+**Linux / macOS**
 
 ```bash
 git clone https://github.com/efernandesmateus/MITRE-ATTACK-Coverage-Heatmap.git
 cd MITRE-ATTACK-Coverage-Heatmap
+python3 -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
-
 python gerar_mitre_json.py --mapa exemplo/casos_de_uso_exemplo.xlsx
 ```
+
+**macOS com Python do python.org:** se o download do MITRE falhar com `CERTIFICATE_VERIFY_FAILED`, execute uma vez o `Install Certificates.command` da pasta do Python em Aplicativos. Quem instalou o Python pelo Homebrew não precisa disso.
+
+Nas próximas vezes, basta ativar o ambiente virtual (`.venv\Scripts\Activate.ps1` ou `source .venv/bin/activate`) e rodar o script.
 
 Depois, no [ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/): **Open Existing Layer → Upload from local** e selecione o `mitre_navigator.json` gerado.
 
@@ -101,6 +123,7 @@ Em redes com proxy, o download respeita as variáveis de ambiente `HTTPS_PROXY`/
 - Técnicas-pai exibem a **soma** dos scores das sub-técnicas monitoradas (`aggregateFunction: sum`). Para mostrar a sub-técnica mais coberta, troque por `max` no script ou em *layer controls → layout* no Navigator.
 - Sub-técnicas monitoradas já abrem expandidas.
 - A versão do ATT&CK fica registrada no JSON e no nome da camada.
+- No Linux e no macOS, nomes de arquivo diferenciam maiúsculas: `--mapa` precisa do nome exato da planilha.
 
 ## ⚠️ Não publique seus dados reais
 
@@ -123,9 +146,14 @@ Generates a [MITRE ATT&CK Navigator](https://mitre-attack.github.io/attack-navig
 The spreadsheet uses technique **names** (not IDs). The script validates every row against the latest ATT&CK release, downloading the official STIX data once per version and caching it, with offline fallback to the cache or to a local `enterprise-attack-v*.xlsx`. If anything doesn't match, no JSON is produced: every problem is listed with its Excel row number and a suggested fix (revoked techniques, restructured tactics, sub-techniques that belong to another technique, typos, invalid tactic × technique pairs).
 
 ```bash
+git clone https://github.com/efernandesmateus/MITRE-ATTACK-Coverage-Heatmap.git
+cd MITRE-ATTACK-Coverage-Heatmap
+python3 -m venv .venv && source .venv/bin/activate   # Windows: py -m venv .venv; .venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 python gerar_mitre_json.py --mapa exemplo/casos_de_uso_exemplo.xlsx
 ```
+
+Works on Windows, Linux and macOS (Python 3.8+). On macOS with the python.org installer, run `Install Certificates.command` once if the MITRE download fails with `CERTIFICATE_VERIFY_FAILED`.
 
 Main options: `--versao latest|<x.y>`, `--offline`, `--nome`, `--saida`, `--aba`. Console messages and spreadsheet column headers are in Portuguese (`Data Sources`, `Nome da Regra`, `Tática`, `Técnica`, `Sub-Técnica`); tactic and technique names are in English, as on the MITRE website. See `exemplo/` for a sample spreadsheet and the resulting layer.
 
