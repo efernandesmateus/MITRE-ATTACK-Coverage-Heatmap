@@ -27,7 +27,7 @@ A planilha é preenchida com os **nomes** das táticas e técnicas, do jeito que
 ## Uso rápido
 
 ```bash
-git clone https://github.com/efernandesmateus/ATT-CK-Coverage-Heatmap.git
+git clone https://github.com/efernandesmateus/MITRE-ATTACK-Coverage-Heatmap.git
 cd MITRE-ATTACK-Coverage-Heatmap
 pip install -r requirements.txt
 
