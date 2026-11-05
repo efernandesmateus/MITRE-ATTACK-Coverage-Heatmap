@@ -27,8 +27,8 @@ A planilha é preenchida com os **nomes** das táticas e técnicas, do jeito que
 ## Uso rápido
 
 ```bash
-git clone https://github.com/<seu-usuario>/attack-coverage-heatmap.git
-cd attack-coverage-heatmap
+git clone https://github.com/efernandesmateus/ATT-CK-Coverage-Heatmap.git
+cd ATT-CK-Coverage-Heatmap
 pip install -r requirements.txt
 
 python gerar_mitre_json.py --mapa exemplo/casos_de_uso_exemplo.xlsx
