@@ -1,0 +1,15 @@
+# Referência do MITRE baixada/usada localmente (o script baixa sozinho)
+enterprise-attack-*.json
+enterprise-attack-*.xlsx
+*.tmp
+
+# Dados reais e saídas locais: não versionar
+/mapa_de_calor.xlsx
+/mitre_navigator.json
+~$*.xlsx
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
