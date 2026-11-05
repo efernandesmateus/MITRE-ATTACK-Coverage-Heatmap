@@ -6,7 +6,7 @@ Gera uma camada (layer) do [MITRE ATT&CK Navigator](https://mitre-attack.github.
 
 A planilha é preenchida com os **nomes** das táticas e técnicas, do jeito que o analista já trabalha, sem precisar decorar IDs. O script valida tudo contra a versão mais recente do ATT&CK e, quando o MITRE muda algo, aponta a linha do Excel e sugere a correção.
 
-<!-- Adicione aqui um print da camada aberta no Navigator: ![Exemplo](docs/exemplo.png) -->
+![Camada de exemplo no ATT&CK Navigator](exemplo/exemplo.png)
 
 ## Funcionalidades
 
